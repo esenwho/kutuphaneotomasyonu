@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1" xml:space="preserve">
+    <value>ÇAĞDAŞ KÜTÜPHANESİ</value>
+  </data>
+  <data name="label10" xml:space="preserve">
+    <value>Kitap Adı</value>
+  </data>
+  <data name="label11" xml:space="preserve">
+    <value>Yazar Adı</value>
+  </data>
+  <data name="label12" xml:space="preserve">
+    <value>Kitap Türü</value>
+  </data>
+  <data name="label13" xml:space="preserve">
+    <value>Yayınevi</value>
+  </data>
+  <data name="label14" xml:space="preserve">
+    <value>Basım Yılı</value>
+  </data>
+  <data name="label15" xml:space="preserve">
+    <value>Dergi İçin Arama</value>
+  </data>
+  <data name="label16" xml:space="preserve">
+    <value>Kitap İçin Arama</value>
+  </data>
+  <data name="label17" xml:space="preserve">
+    <value>ÇALIŞAN İŞLEMLERİ</value>
+  </data>
+  <data name="label18" xml:space="preserve">
+    <value>EKLE</value>
+  </data>
+  <data name="label19" xml:space="preserve">
+    <value>SİL</value>
+  </data>
+  <data name="label2" xml:space="preserve">
+    <value>KULLANICI GİRİŞİ</value>
+  </data>
+  <data name="label20" xml:space="preserve">
+    <value>GÜNCELLE</value>
+  </data>
+  <data name="label21" xml:space="preserve">
+    <value>YÖNETİCİ İŞLEMLERİ</value>
+  </data>
+  <data name="label22" xml:space="preserve">
+    <value>Dergi Adı</value>
+  </data>
+  <data name="label23" xml:space="preserve">
+    <value>Dergi Başlığı</value>
+  </data>
+  <data name="label24" xml:space="preserve">
+    <value>Dergi Türü</value>
+  </data>
+  <data name="label25" xml:space="preserve">
+    <value>Dergi Editörü</value>
+  </data>
+  <data name="label26" xml:space="preserve">
+    <value>KİTAP İŞLEMLERİ</value>
+  </data>
+  <data name="label27" xml:space="preserve">
+    <value>Kitap ID:</value>
+  </data>
+  <data name="label28" xml:space="preserve">
+    <value>ISBN:</value>
+  </data>
+  <data name="label29" xml:space="preserve">
+    <value>Kitap Adı:</value>
+  </data>
+  <data name="label3" xml:space="preserve">
+    <value>ÇALIŞAN GİRİŞİ</value>
+  </data>
+  <data name="label30" xml:space="preserve">
+    <value>Yazarı:</value>
+  </data>
+  <data name="label31" xml:space="preserve">
+    <value>Türü:</value>
+  </data>
+  <data name="label32" xml:space="preserve">
+    <value>Sayfa Sayısı:</value>
+  </data>
+  <data name="label33" xml:space="preserve">
+    <value>Yayınevi:</value>
+  </data>
+  <data name="label34" xml:space="preserve">
+    <value>Yayın Yılı:</value>
+  </data>
+  <data name="label35" xml:space="preserve">
+    <value>Yayın Yeri:</value>
+  </data>
+  <data name="label36" xml:space="preserve">
+    <value>Kitap Özeti:</value>
+  </data>
+  <data name="label37" xml:space="preserve">
+    <value>Yer ID:</value>
+  </data>
+  <data name="label38" xml:space="preserve">
+    <value>KİTABI EKLE</value>
+  </data>
+  <data name="label39" xml:space="preserve">
+    <value>KİTABI SİL</value>
+  </data>
+  <data name="label4" xml:space="preserve">
+    <value>YÖNETİCİ GİRİŞİ</value>
+  </data>
+  <data name="label40" xml:space="preserve">
+    <value>KİTABI GÜNCELLE</value>
+  </data>
+  <data name="label41" xml:space="preserve">
+    <value>ÜYE İŞLEMLERİ</value>
+  </data>
+  <data name="label42" xml:space="preserve">
+    <value>Üye ID:</value>
+  </data>
+  <data name="label43" xml:space="preserve">
+    <value>Adı:</value>
+  </data>
+  <data name="label44" xml:space="preserve">
+    <value>Soyadı:</value>
+  </data>
+  <data name="label45" xml:space="preserve">
+    <value>E-Mail:</value>
+  </data>
+  <data name="label46" xml:space="preserve">
+    <value>Telefon:</value>
+  </data>
+  <data name="label47" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="label48" xml:space="preserve">
+    <value>ÜYEYİ EKLE</value>
+  </data>
+  <data name="label49" xml:space="preserve">
+    <value>ÜYEYİ SİL</value>
+  </data>
+  <data name="label5" xml:space="preserve">
+    <value>TC Kimlik No :</value>
+  </data>
+  <data name="label50" xml:space="preserve">
+    <value>ÜYEYİ GÜNCELLE</value>
+  </data>
+  <data name="label51" xml:space="preserve">
+    <value>KİTAP EMANET İŞLEMLERİ</value>
+  </data>
+  <data name="label52" xml:space="preserve">
+    <value>Emanet ID:</value>
+  </data>
+  <data name="label53" xml:space="preserve">
+    <value>Alım Tarihi:</value>
+  </data>
+  <data name="label54" xml:space="preserve">
+    <value>Teslim Tarihi:</value>
+  </data>
+  <data name="label55" xml:space="preserve">
+    <value>Durumu:</value>
+  </data>
+  <data name="label56" xml:space="preserve">
+    <value>KİTAP TABLOSU</value>
+  </data>
+  <data name="label57" xml:space="preserve">
+    <value>EMANET EKLE</value>
+  </data>
+  <data name="label58" xml:space="preserve">
+    <value>EMANET SİL</value>
+  </data>
+  <data name="label59" xml:space="preserve">
+    <value>EMANET GÜNCELLE</value>
+  </data>
+  <data name="label6" xml:space="preserve">
+    <value>Şifre :</value>
+  </data>
+  <data name="label60" xml:space="preserve">
+    <value>DERGİ EMANET İŞLEMLERİ</value>
+  </data>
+  <data name="label61" xml:space="preserve">
+    <value>Dergi ID:</value>
+  </data>
+  <data name="label62" xml:space="preserve">
+    <value>DERGİ TABLOSU</value>
+  </data>
+  <data name="label63" xml:space="preserve">
+    <value>EMANETİ EKLE</value>
+  </data>
+  <data name="label64" xml:space="preserve">
+    <value>EMANETİ SİL</value>
+  </data>
+  <data name="label65" xml:space="preserve">
+    <value>EMANETİ GÜNCELLE</value>
+  </data>
+  <data name="label66" xml:space="preserve">
+    <value>DERGİ İŞLEMLERİ</value>
+  </data>
+  <data name="label67" xml:space="preserve">
+    <value>ISNN:</value>
+  </data>
+  <data name="label68" xml:space="preserve">
+    <value>Dergi Adı:</value>
+  </data>
+  <data name="label69" xml:space="preserve">
+    <value>Dergi Başlığı:</value>
+  </data>
+  <data name="label7" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="label70" xml:space="preserve">
+    <value>Dergi Türü:</value>
+  </data>
+  <data name="label71" xml:space="preserve">
+    <value>Editörü:</value>
+  </data>
+  <data name="label72" xml:space="preserve">
+    <value>DERGİ EKLE</value>
+  </data>
+  <data name="label73" xml:space="preserve">
+    <value>DERGİ SİL</value>
+  </data>
+  <data name="label74" xml:space="preserve">
+    <value>DERGİ GÜNCELLE</value>
+  </data>
+  <data name="label8" xml:space="preserve">
+    <value>Kayıt Ol</value>
+  </data>
+  <data name="label9" xml:space="preserve">
+    <value>Ara :</value>
+  </data>
+</root>

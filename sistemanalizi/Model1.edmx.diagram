@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b53d40ef7bb41cdae2faaf19fe38454" Name="Diagram1">
+        <EntityTypeShape EntityType="kutuphaneeModel.calisan" Width="1.5" PointX="3.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kutuphaneeModel.dergi" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kutuphaneeModel.dergiemanet" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kutuphaneeModel.kitap" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kutuphaneeModel.kitapemanet" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kutuphaneeModel.konum" Width="1.5" PointX="1.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kutuphaneeModel.uye" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kutuphaneeModel.yonetici" Width="1.5" PointX="5.75" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="kutuphaneeModel.FK_dergi_konum" ManuallyRouted="false" />
+        <AssociationConnector Association="kutuphaneeModel.FK_dergiemanet_dergi" ManuallyRouted="false" />
+        <AssociationConnector Association="kutuphaneeModel.FK_dergiemanet_uye" ManuallyRouted="false" />
+        <AssociationConnector Association="kutuphaneeModel.FK_kitap_konum" ManuallyRouted="false" />
+        <AssociationConnector Association="kutuphaneeModel.FK_kitapemanet_kitap" ManuallyRouted="false" />
+        <AssociationConnector Association="kutuphaneeModel.FK_kitapemanet_uye" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="kutuphaneeModel.tblkitap_Log" Width="1.5" PointX="6.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="kutuphaneeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="calisan">
+          <Key>
+            <PropertyRef Name="calisanID" />
+          </Key>
+          <Property Name="calisanID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="calisanadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="calisansoyadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="calisanmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="calisantel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="calisansifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dergi">
+          <Key>
+            <PropertyRef Name="dergiID" />
+          </Key>
+          <Property Name="dergiID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="ISNN" Type="nchar" MaxLength="8" Nullable="false" />
+          <Property Name="dergiadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dergibasligi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dergituru" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dergieditoru" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sayfasayisi" Type="int" Nullable="false" />
+          <Property Name="yayinevi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yayinyili" Type="int" Nullable="false" />
+          <Property Name="yayinyeri" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yerID" Type="nchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dergiemanet">
+          <Key>
+            <PropertyRef Name="demanetID" />
+          </Key>
+          <Property Name="demanetID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="uyeID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="dergiID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="alimtarihi" Type="date" Nullable="false" />
+          <Property Name="teslimtarihi" Type="date" Nullable="false" />
+          <Property Name="durumu" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kitap">
+          <Key>
+            <PropertyRef Name="kitapID" />
+          </Key>
+          <Property Name="kitapID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="ISBN" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="kitapadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kitapyazari" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kitapturu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sayfasayisi" Type="int" Nullable="false" />
+          <Property Name="yayinevi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yayinyili" Type="int" Nullable="false" />
+          <Property Name="yayinyeri" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kitapozeti" Type="text" Nullable="false" />
+          <Property Name="yerID" Type="nchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kitapemanet">
+          <Key>
+            <PropertyRef Name="kemanetID" />
+          </Key>
+          <Property Name="kemanetID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="uyeID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="kitapID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="alimtarihi" Type="date" Nullable="false" />
+          <Property Name="teslimtarihi" Type="date" Nullable="false" />
+          <Property Name="durumu" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="konum">
+          <Key>
+            <PropertyRef Name="yerID" />
+          </Key>
+          <Property Name="yerID" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="blok" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="raf" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblkitap_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kitapID" Type="nchar" MaxLength="11" />
+          <Property Name="ISBN" Type="nchar" MaxLength="13" />
+          <Property Name="kitapadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="kitapyazari" Type="nvarchar" MaxLength="50" />
+          <Property Name="kitapturu" Type="nvarchar" MaxLength="50" />
+          <Property Name="sayfasayisi" Type="int" />
+          <Property Name="yayinevi" Type="nvarchar" MaxLength="100" />
+          <Property Name="yayinyili" Type="int" />
+          <Property Name="yayinyeri" Type="nvarchar" MaxLength="50" />
+          <Property Name="kitapozeti" Type="text" />
+          <Property Name="yerID" Type="nchar" MaxLength="5" />
+          <Property Name="log_islem" Type="varchar" MaxLength="10" />
+          <Property Name="log_tarih" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uye">
+          <Key>
+            <PropertyRef Name="uyeID" />
+          </Key>
+          <Property Name="uyeID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="uyeadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="uyesoyadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="uyemail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="uyetel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="uyesifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="yonetici">
+          <Key>
+            <PropertyRef Name="yoneticiID" />
+          </Key>
+          <Property Name="yoneticiID" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="yoneticiadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yoneticisoyadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yoneticimail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yoneticitel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yoneticisifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dergi_konum">
+          <End Role="konum" Type="Self.konum" Multiplicity="1" />
+          <End Role="dergi" Type="Self.dergi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="konum">
+              <PropertyRef Name="yerID" />
+            </Principal>
+            <Dependent Role="dergi">
+              <PropertyRef Name="yerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dergiemanet_dergi">
+          <End Role="dergi" Type="Self.dergi" Multiplicity="1" />
+          <End Role="dergiemanet" Type="Self.dergiemanet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dergi">
+              <PropertyRef Name="dergiID" />
+            </Principal>
+            <Dependent Role="dergiemanet">
+              <PropertyRef Name="dergiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dergiemanet_uye">
+          <End Role="uye" Type="Self.uye" Multiplicity="1" />
+          <End Role="dergiemanet" Type="Self.dergiemanet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uye">
+              <PropertyRef Name="uyeID" />
+            </Principal>
+            <Dependent Role="dergiemanet">
+              <PropertyRef Name="uyeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kitap_konum">
+          <End Role="konum" Type="Self.konum" Multiplicity="1" />
+          <End Role="kitap" Type="Self.kitap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="konum">
+              <PropertyRef Name="yerID" />
+            </Principal>
+            <Dependent Role="kitap">
+              <PropertyRef Name="yerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kitapemanet_kitap">
+          <End Role="kitap" Type="Self.kitap" Multiplicity="1" />
+          <End Role="kitapemanet" Type="Self.kitapemanet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kitap">
+              <PropertyRef Name="kitapID" />
+            </Principal>
+            <Dependent Role="kitapemanet">
+              <PropertyRef Name="kitapID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kitapemanet_uye">
+          <End Role="uye" Type="Self.uye" Multiplicity="1" />
+          <End Role="kitapemanet" Type="Self.kitapemanet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uye">
+              <PropertyRef Name="uyeID" />
+            </Principal>
+            <Dependent Role="kitapemanet">
+              <PropertyRef Name="uyeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="kutuphaneeModelStoreContainer">
+          <EntitySet Name="calisan" EntityType="Self.calisan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dergi" EntityType="Self.dergi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dergiemanet" EntityType="Self.dergiemanet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kitap" EntityType="Self.kitap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kitapemanet" EntityType="Self.kitapemanet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="konum" EntityType="Self.konum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblkitap_Log" EntityType="Self.tblkitap_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="uye" EntityType="Self.uye" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="yonetici" EntityType="Self.yonetici" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dergi_konum" Association="Self.FK_dergi_konum">
+            <End Role="konum" EntitySet="konum" />
+            <End Role="dergi" EntitySet="dergi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dergiemanet_dergi" Association="Self.FK_dergiemanet_dergi">
+            <End Role="dergi" EntitySet="dergi" />
+            <End Role="dergiemanet" EntitySet="dergiemanet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dergiemanet_uye" Association="Self.FK_dergiemanet_uye">
+            <End Role="uye" EntitySet="uye" />
+            <End Role="dergiemanet" EntitySet="dergiemanet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kitap_konum" Association="Self.FK_kitap_konum">
+            <End Role="konum" EntitySet="konum" />
+            <End Role="kitap" EntitySet="kitap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kitapemanet_kitap" Association="Self.FK_kitapemanet_kitap">
+            <End Role="kitap" EntitySet="kitap" />
+            <End Role="kitapemanet" EntitySet="kitapemanet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kitapemanet_uye" Association="Self.FK_kitapemanet_uye">
+            <End Role="uye" EntitySet="uye" />
+            <End Role="kitapemanet" EntitySet="kitapemanet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="kutuphaneeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="calisan">
+          <Key>
+            <PropertyRef Name="calisanID" />
+          </Key>
+          <Property Name="calisanID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="calisanadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="calisansoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="calisanmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="calisantel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="calisansifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dergi">
+          <Key>
+            <PropertyRef Name="dergiID" />
+          </Key>
+          <Property Name="dergiID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ISNN" Type="String" MaxLength="8" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="dergiadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dergibasligi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dergituru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dergieditoru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sayfasayisi" Type="Int32" Nullable="false" />
+          <Property Name="yayinevi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yayinyili" Type="Int32" Nullable="false" />
+          <Property Name="yayinyeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yerID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="konum" Relationship="Self.FK_dergi_konum" FromRole="dergi" ToRole="konum" />
+          <NavigationProperty Name="dergiemanet" Relationship="Self.FK_dergiemanet_dergi" FromRole="dergi" ToRole="dergiemanet" />
+        </EntityType>
+        <EntityType Name="dergiemanet">
+          <Key>
+            <PropertyRef Name="demanetID" />
+          </Key>
+          <Property Name="demanetID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="uyeID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="dergiID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="alimtarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="teslimtarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="durumu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="dergi" Relationship="Self.FK_dergiemanet_dergi" FromRole="dergiemanet" ToRole="dergi" />
+          <NavigationProperty Name="uye" Relationship="Self.FK_dergiemanet_uye" FromRole="dergiemanet" ToRole="uye" />
+        </EntityType>
+        <EntityType Name="kitap">
+          <Key>
+            <PropertyRef Name="kitapID" />
+          </Key>
+          <Property Name="kitapID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ISBN" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="kitapadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kitapyazari" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kitapturu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sayfasayisi" Type="Int32" Nullable="false" />
+          <Property Name="yayinevi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yayinyili" Type="Int32" Nullable="false" />
+          <Property Name="yayinyeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kitapozeti" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yerID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="konum" Relationship="Self.FK_kitap_konum" FromRole="kitap" ToRole="konum" />
+          <NavigationProperty Name="kitapemanet" Relationship="Self.FK_kitapemanet_kitap" FromRole="kitap" ToRole="kitapemanet" />
+        </EntityType>
+        <EntityType Name="kitapemanet">
+          <Key>
+            <PropertyRef Name="kemanetID" />
+          </Key>
+          <Property Name="kemanetID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="uyeID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="kitapID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="alimtarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="teslimtarihi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="durumu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="kitap" Relationship="Self.FK_kitapemanet_kitap" FromRole="kitapemanet" ToRole="kitap" />
+          <NavigationProperty Name="uye" Relationship="Self.FK_kitapemanet_uye" FromRole="kitapemanet" ToRole="uye" />
+        </EntityType>
+        <EntityType Name="konum">
+          <Key>
+            <PropertyRef Name="yerID" />
+          </Key>
+          <Property Name="yerID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="blok" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="raf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="dergi" Relationship="Self.FK_dergi_konum" FromRole="konum" ToRole="dergi" />
+          <NavigationProperty Name="kitap" Relationship="Self.FK_kitap_konum" FromRole="konum" ToRole="kitap" />
+        </EntityType>
+        <EntityType Name="uye">
+          <Key>
+            <PropertyRef Name="uyeID" />
+          </Key>
+          <Property Name="uyeID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="uyeadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uyesoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uyemail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uyetel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uyesifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="dergiemanet" Relationship="Self.FK_dergiemanet_uye" FromRole="uye" ToRole="dergiemanet" />
+          <NavigationProperty Name="kitapemanet" Relationship="Self.FK_kitapemanet_uye" FromRole="uye" ToRole="kitapemanet" />
+        </EntityType>
+        <EntityType Name="yonetici">
+          <Key>
+            <PropertyRef Name="yoneticiID" />
+          </Key>
+          <Property Name="yoneticiID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="yoneticiadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yoneticisoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yoneticimail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yoneticitel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yoneticisifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dergi_konum">
+          <End Role="konum" Type="Self.konum" Multiplicity="1" />
+          <End Role="dergi" Type="Self.dergi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="konum">
+              <PropertyRef Name="yerID" />
+            </Principal>
+            <Dependent Role="dergi">
+              <PropertyRef Name="yerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dergiemanet_dergi">
+          <End Role="dergi" Type="Self.dergi" Multiplicity="1" />
+          <End Role="dergiemanet" Type="Self.dergiemanet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dergi">
+              <PropertyRef Name="dergiID" />
+            </Principal>
+            <Dependent Role="dergiemanet">
+              <PropertyRef Name="dergiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dergiemanet_uye">
+          <End Role="uye" Type="Self.uye" Multiplicity="1" />
+          <End Role="dergiemanet" Type="Self.dergiemanet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uye">
+              <PropertyRef Name="uyeID" />
+            </Principal>
+            <Dependent Role="dergiemanet">
+              <PropertyRef Name="uyeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kitap_konum">
+          <End Role="konum" Type="Self.konum" Multiplicity="1" />
+          <End Role="kitap" Type="Self.kitap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="konum">
+              <PropertyRef Name="yerID" />
+            </Principal>
+            <Dependent Role="kitap">
+              <PropertyRef Name="yerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kitapemanet_kitap">
+          <End Role="kitap" Type="Self.kitap" Multiplicity="1" />
+          <End Role="kitapemanet" Type="Self.kitapemanet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kitap">
+              <PropertyRef Name="kitapID" />
+            </Principal>
+            <Dependent Role="kitapemanet">
+              <PropertyRef Name="kitapID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kitapemanet_uye">
+          <End Role="uye" Type="Self.uye" Multiplicity="1" />
+          <End Role="kitapemanet" Type="Self.kitapemanet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uye">
+              <PropertyRef Name="uyeID" />
+            </Principal>
+            <Dependent Role="kitapemanet">
+              <PropertyRef Name="uyeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="kutuphaneeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="calisan" EntityType="Self.calisan" />
+          <EntitySet Name="dergi" EntityType="Self.dergi" />
+          <EntitySet Name="dergiemanet" EntityType="Self.dergiemanet" />
+          <EntitySet Name="kitap" EntityType="Self.kitap" />
+          <EntitySet Name="kitapemanet" EntityType="Self.kitapemanet" />
+          <EntitySet Name="konum" EntityType="Self.konum" />
+          <EntitySet Name="uye" EntityType="Self.uye" />
+          <EntitySet Name="yonetici" EntityType="Self.yonetici" />
+          <AssociationSet Name="FK_dergi_konum" Association="Self.FK_dergi_konum">
+            <End Role="konum" EntitySet="konum" />
+            <End Role="dergi" EntitySet="dergi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dergiemanet_dergi" Association="Self.FK_dergiemanet_dergi">
+            <End Role="dergi" EntitySet="dergi" />
+            <End Role="dergiemanet" EntitySet="dergiemanet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dergiemanet_uye" Association="Self.FK_dergiemanet_uye">
+            <End Role="uye" EntitySet="uye" />
+            <End Role="dergiemanet" EntitySet="dergiemanet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kitap_konum" Association="Self.FK_kitap_konum">
+            <End Role="konum" EntitySet="konum" />
+            <End Role="kitap" EntitySet="kitap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kitapemanet_kitap" Association="Self.FK_kitapemanet_kitap">
+            <End Role="kitap" EntitySet="kitap" />
+            <End Role="kitapemanet" EntitySet="kitapemanet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kitapemanet_uye" Association="Self.FK_kitapemanet_uye">
+            <End Role="uye" EntitySet="uye" />
+            <End Role="kitapemanet" EntitySet="kitapemanet" />
+          </AssociationSet>
+          <EntitySet Name="tblkitap_Log" EntityType="kutuphaneeModel.tblkitap_Log" />
+        </EntityContainer>
+        <EntityType Name="tblkitap_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kitapID" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="ISBN" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="kitapadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kitapyazari" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kitapturu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sayfasayisi" Type="Int32" />
+          <Property Name="yayinevi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="yayinyili" Type="Int32" />
+          <Property Name="yayinyeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kitapozeti" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="yerID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="log_islem" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="log_tarih" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="kutuphaneeModelStoreContainer" CdmEntityContainer="kutuphaneeEntities">
+          <EntitySetMapping Name="calisan">
+            <EntityTypeMapping TypeName="kutuphaneeModel.calisan">
+              <MappingFragment StoreEntitySet="calisan">
+                <ScalarProperty Name="calisanID" ColumnName="calisanID" />
+                <ScalarProperty Name="calisanadi" ColumnName="calisanadi" />
+                <ScalarProperty Name="calisansoyadi" ColumnName="calisansoyadi" />
+                <ScalarProperty Name="calisanmail" ColumnName="calisanmail" />
+                <ScalarProperty Name="calisantel" ColumnName="calisantel" />
+                <ScalarProperty Name="calisansifre" ColumnName="calisansifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dergi">
+            <EntityTypeMapping TypeName="kutuphaneeModel.dergi">
+              <MappingFragment StoreEntitySet="dergi">
+                <ScalarProperty Name="dergiID" ColumnName="dergiID" />
+                <ScalarProperty Name="ISNN" ColumnName="ISNN" />
+                <ScalarProperty Name="dergiadi" ColumnName="dergiadi" />
+                <ScalarProperty Name="dergibasligi" ColumnName="dergibasligi" />
+                <ScalarProperty Name="dergituru" ColumnName="dergituru" />
+                <ScalarProperty Name="dergieditoru" ColumnName="dergieditoru" />
+                <ScalarProperty Name="sayfasayisi" ColumnName="sayfasayisi" />
+                <ScalarProperty Name="yayinevi" ColumnName="yayinevi" />
+                <ScalarProperty Name="yayinyili" ColumnName="yayinyili" />
+                <ScalarProperty Name="yayinyeri" ColumnName="yayinyeri" />
+                <ScalarProperty Name="yerID" ColumnName="yerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dergiemanet">
+            <EntityTypeMapping TypeName="kutuphaneeModel.dergiemanet">
+              <MappingFragment StoreEntitySet="dergiemanet">
+                <ScalarProperty Name="demanetID" ColumnName="demanetID" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="dergiID" ColumnName="dergiID" />
+                <ScalarProperty Name="alimtarihi" ColumnName="alimtarihi" />
+                <ScalarProperty Name="teslimtarihi" ColumnName="teslimtarihi" />
+                <ScalarProperty Name="durumu" ColumnName="durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kitap">
+            <EntityTypeMapping TypeName="kutuphaneeModel.kitap">
+              <MappingFragment StoreEntitySet="kitap">
+                <ScalarProperty Name="kitapID" ColumnName="kitapID" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="kitapadi" ColumnName="kitapadi" />
+                <ScalarProperty Name="kitapyazari" ColumnName="kitapyazari" />
+                <ScalarProperty Name="kitapturu" ColumnName="kitapturu" />
+                <ScalarProperty Name="sayfasayisi" ColumnName="sayfasayisi" />
+                <ScalarProperty Name="yayinevi" ColumnName="yayinevi" />
+                <ScalarProperty Name="yayinyili" ColumnName="yayinyili" />
+                <ScalarProperty Name="yayinyeri" ColumnName="yayinyeri" />
+                <ScalarProperty Name="kitapozeti" ColumnName="kitapozeti" />
+                <ScalarProperty Name="yerID" ColumnName="yerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kitapemanet">
+            <EntityTypeMapping TypeName="kutuphaneeModel.kitapemanet">
+              <MappingFragment StoreEntitySet="kitapemanet">
+                <ScalarProperty Name="kemanetID" ColumnName="kemanetID" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="kitapID" ColumnName="kitapID" />
+                <ScalarProperty Name="alimtarihi" ColumnName="alimtarihi" />
+                <ScalarProperty Name="teslimtarihi" ColumnName="teslimtarihi" />
+                <ScalarProperty Name="durumu" ColumnName="durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="konum">
+            <EntityTypeMapping TypeName="kutuphaneeModel.konum">
+              <MappingFragment StoreEntitySet="konum">
+                <ScalarProperty Name="yerID" ColumnName="yerID" />
+                <ScalarProperty Name="blok" ColumnName="blok" />
+                <ScalarProperty Name="raf" ColumnName="raf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uye">
+            <EntityTypeMapping TypeName="kutuphaneeModel.uye">
+              <MappingFragment StoreEntitySet="uye">
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="uyeadi" ColumnName="uyeadi" />
+                <ScalarProperty Name="uyesoyadi" ColumnName="uyesoyadi" />
+                <ScalarProperty Name="uyemail" ColumnName="uyemail" />
+                <ScalarProperty Name="uyetel" ColumnName="uyetel" />
+                <ScalarProperty Name="uyesifre" ColumnName="uyesifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yonetici">
+            <EntityTypeMapping TypeName="kutuphaneeModel.yonetici">
+              <MappingFragment StoreEntitySet="yonetici">
+                <ScalarProperty Name="yoneticiID" ColumnName="yoneticiID" />
+                <ScalarProperty Name="yoneticiadi" ColumnName="yoneticiadi" />
+                <ScalarProperty Name="yoneticisoyadi" ColumnName="yoneticisoyadi" />
+                <ScalarProperty Name="yoneticimail" ColumnName="yoneticimail" />
+                <ScalarProperty Name="yoneticitel" ColumnName="yoneticitel" />
+                <ScalarProperty Name="yoneticisifre" ColumnName="yoneticisifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblkitap_Log">
+            <EntityTypeMapping TypeName="kutuphaneeModel.tblkitap_Log">
+              <MappingFragment StoreEntitySet="tblkitap_Log">
+                <ScalarProperty Name="log_tarih" ColumnName="log_tarih" />
+                <ScalarProperty Name="log_islem" ColumnName="log_islem" />
+                <ScalarProperty Name="yerID" ColumnName="yerID" />
+                <ScalarProperty Name="kitapozeti" ColumnName="kitapozeti" />
+                <ScalarProperty Name="yayinyeri" ColumnName="yayinyeri" />
+                <ScalarProperty Name="yayinyili" ColumnName="yayinyili" />
+                <ScalarProperty Name="yayinevi" ColumnName="yayinevi" />
+                <ScalarProperty Name="sayfasayisi" ColumnName="sayfasayisi" />
+                <ScalarProperty Name="kitapturu" ColumnName="kitapturu" />
+                <ScalarProperty Name="kitapyazari" ColumnName="kitapyazari" />
+                <ScalarProperty Name="kitapadi" ColumnName="kitapadi" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="kitapID" ColumnName="kitapID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
